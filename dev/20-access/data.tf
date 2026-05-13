@@ -3,7 +3,7 @@ data "terraform_remote_state" "network" {
 
   config = {
     resource_group_name  = "tfstate-rg"
-    storage_account_name = "tfstate12345"
+    storage_account_name = "tfstatesameer"
     container_name       = "tfstate"
     key                  = "dev-network.tfstate"
   }

@@ -1,5 +1,5 @@
 module "appgw" {
-  source = "../../../modules/application-gateway"
+  source = "../../../terraform-azure-module/application-gateway"
 
   name                = "appgw-dev-roboshop"
   location            = data.terraform_remote_state.network.outputs.location

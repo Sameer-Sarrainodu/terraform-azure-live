@@ -1,5 +1,5 @@
 module "bastion" {
-  source = "../../../modules/bastion"
+  source = "../../../terraform-azure-module/bastion"
 
   name                = "bastion-dev-roboshop"
   location            = data.terraform_remote_state.network.outputs.location

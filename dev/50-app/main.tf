@@ -8,7 +8,7 @@ module "vmss" {
   subnet_id = data.terraform_remote_state.network.outputs.subnet_ids["app"]
 
   admin_username = var.admin_username
-  ssh_public_key = file("~/.ssh/roboshop-azure.pub")
+  ssh_public_key = file(var.ssh_public_key)
 
   instance_count = 2
 
