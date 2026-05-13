@@ -10,7 +10,7 @@ module "vmss" {
   admin_username = var.admin_username
   ssh_public_key = file(var.ssh_public_key)
 
-  instance_count = 2
+  instance_count = 1
 
   backend_pool_ids = [
     data.terraform_remote_state.appgw.outputs.backend_pool_id
