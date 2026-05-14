@@ -1,2 +1,2 @@
 admin_username = "azureuser"
-ssh_public_key = "C:/Users/jeeva/.ssh/roboshop-azure.pub"
+ssh_public_key = "~/.ssh/roboshop-azure.pub"

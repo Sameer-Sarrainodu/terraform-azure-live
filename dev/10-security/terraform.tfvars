@@ -8,7 +8,19 @@ app_nsg_rules = [
     source_address_prefix      = "*"
     destination_address_prefix = "*"
     destination_port_range     = "80"
+  },
+  
+  {
+    name                       = "allow-jenkins"
+    priority                   = 110
+    direction                  = "Inbound"
+    access                     = "Allow"
+    protocol                   = "Tcp"
+    destination_port_range     = "8080"
+    source_address_prefix      = "*"
+    destination_address_prefix = "*"
   }
+
 ]
 
 middleware_nsg_rules = [
