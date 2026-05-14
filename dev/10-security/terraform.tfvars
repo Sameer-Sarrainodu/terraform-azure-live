@@ -39,7 +39,7 @@ middleware_nsg_rules = [
 
   {
     name                       = "allow-ssh"
-    priority                   = 90
+    priority                   = 120
     direction                  = "Inbound"
     access                     = "Allow"
     protocol                   = "Tcp"
@@ -50,7 +50,7 @@ middleware_nsg_rules = [
 
   {
     name                       = "allow-redis"
-    priority                   = 100
+    priority                   = 130
     direction                  = "Inbound"
     access                     = "Allow"
     protocol                   = "Tcp"
@@ -61,7 +61,7 @@ middleware_nsg_rules = [
 
   {
     name                       = "allow-rabbitmq"
-    priority                   = 110
+    priority                   = 140
     direction                  = "Inbound"
     access                     = "Allow"
     protocol                   = "Tcp"
@@ -76,7 +76,7 @@ db_nsg_rules = [
 
   {
     name                       = "allow-ssh"
-    priority                   = 90
+    priority                   = 120
     direction                  = "Inbound"
     access                     = "Allow"
     protocol                   = "Tcp"
@@ -87,7 +87,7 @@ db_nsg_rules = [
 
   {
     name                       = "allow-mysql"
-    priority                   = 100
+    priority                   = 130
     direction                  = "Inbound"
     access                     = "Allow"
     protocol                   = "Tcp"
@@ -98,7 +98,7 @@ db_nsg_rules = [
 
   {
     name                       = "allow-mongodb"
-    priority                   = 110
+    priority                   = 140
     direction                  = "Inbound"
     access                     = "Allow"
     protocol                   = "Tcp"
