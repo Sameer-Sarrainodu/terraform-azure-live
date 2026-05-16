@@ -1,1 +1,1 @@
-admin_username = "azureuser"
+admin_username = "ec2-user"
