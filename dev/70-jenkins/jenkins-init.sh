@@ -48,10 +48,3 @@ chmod 600 /var/lib/jenkins/.ssh/roboshop-azure
 
 echo "🚀 Setting Jenkins ownership..."
 chown -R jenkins:jenkins /var/lib/jenkins/.ssh
-
-echo "🚀 Installing Ansible collections..."
-sudo -u jenkins ansible-galaxy collection install \
-    community.rabbitmq \
-    community.mysql
-
-echo "✅ Jenkins bootstrap completed successfully!"
