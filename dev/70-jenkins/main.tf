@@ -9,6 +9,12 @@ module "jenkins_vm" {
 
   admin_username = var.admin_username
 
+  custom_data = base64encode(
+    templatefile("${path.module}/jenkins-init.sh", {
+      private_key = file("~/.ssh/roboshop-azure")
+    })
+  )
+
   ssh_public_key = file("~/.ssh/roboshop-azure.pub")
 
   vm_size = "Standard_D2s_v3"
