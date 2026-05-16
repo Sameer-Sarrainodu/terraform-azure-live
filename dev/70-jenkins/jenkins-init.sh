@@ -34,6 +34,12 @@ echo "🚀 Enabling and starting Jenkins..."
 systemctl enable jenkins
 systemctl start jenkins
 
+echo "🚀 Opening Jenkins port in firewall..."
+
+firewall-cmd --permanent --add-port=8080/tcp
+
+firewall-cmd --reload
+
 echo "🚀 Creating Jenkins SSH directory..."
 mkdir -p /var/lib/jenkins/.ssh
 
