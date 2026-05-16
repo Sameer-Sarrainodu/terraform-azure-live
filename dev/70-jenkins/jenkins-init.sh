@@ -6,12 +6,16 @@ echo "🚀 Updating system packages..."
 dnf update -y
 
 echo "🚀 Installing required packages..."
+
 dnf install -y \
     git \
-    ansible \
     python3-pip \
     wget \
     curl
+
+echo "🚀 Installing Ansible..."
+
+pip3 install ansible
 
 echo "🚀 Installing Java 21..."
 dnf install -y java-21-openjdk
