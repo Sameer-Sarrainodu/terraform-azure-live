@@ -1,6 +1,6 @@
 module "public_appgw" {
 
-  source = "../../../terraform-azure-module/appgw"
+  source = "../../../terraform-azure-module/application-gateway"
 
   name = "public-appgw-dev"
 
@@ -20,7 +20,7 @@ module "public_appgw" {
 
 module "internal_appgw" {
 
-  source = "../../../terraform-azure-module/appgw"
+  source = "../../../terraform-azure-module/application-gateway"
 
   name = "internal-appgw-dev"
 

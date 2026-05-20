@@ -13,31 +13,31 @@ module "vmss" {
   backend_pool_map = {
 
     frontend = [
-      data.terraform_remote_state.lb.outputs.public_appgw_backend_pool_id
+      data.terraform_remote_state.appgw.outputs.public_appgw_backend_pool_id
     ]
 
     catalogue = [
-      data.terraform_remote_state.lb.outputs.internal_appgw_backend_pool_id
+      data.terraform_remote_state.appgw.outputs.internal_appgw_backend_pool_id
     ]
 
     user = [
-      data.terraform_remote_state.lb.outputs.internal_appgw_backend_pool_id
+      data.terraform_remote_state.appgw.outputs.internal_appgw_backend_pool_id
     ]
 
     cart = [
-      data.terraform_remote_state.lb.outputs.internal_appgw_backend_pool_id
+      data.terraform_remote_state.appgw.outputs.internal_appgw_backend_pool_id
     ]
 
     shipping = [
-      data.terraform_remote_state.lb.outputs.internal_appgw_backend_pool_id
+      data.terraform_remote_state.appgw.outputs.internal_appgw_backend_pool_id
     ]
 
     payment = [
-      data.terraform_remote_state.lb.outputs.internal_appgw_backend_pool_id
+      data.terraform_remote_state.appgw.outputs.internal_appgw_backend_pool_id
     ]
 
     dispatch = [
-      data.terraform_remote_state.lb.outputs.internal_appgw_backend_pool_id
+      data.terraform_remote_state.appgw.outputs.internal_appgw_backend_pool_id
     ]
   }
 

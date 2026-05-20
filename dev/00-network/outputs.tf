@@ -12,3 +12,7 @@ output "subnet_ids" {
 output "vnet_id" {
   value = module.vnet.vnet_id
 }
+
+output "rg_id" {
+  value = module.rg.id
+}

@@ -15,11 +15,11 @@ module "private_dns" {
     redis    = "10.0.2.4"
     rabbitmq = "10.0.2.5"
 
-    catalogue = data.terraform_remote_state.lb.outputs.internal_appgw_ip
-    user      = data.terraform_remote_state.lb.outputs.internal_appgw_ip
-    cart      = data.terraform_remote_state.lb.outputs.internal_appgw_ip
-    shipping  = data.terraform_remote_state.lb.outputs.internal_appgw_ip
-    payment   = data.terraform_remote_state.lb.outputs.internal_appgw_ip
-    dispatch  = data.terraform_remote_state.lb.outputs.internal_appgw_ip
+    catalogue = data.terraform_remote_state.appgw.outputs.internal_appgw_ip
+    user      = data.terraform_remote_state.appgw.outputs.internal_appgw_ip
+    cart      = data.terraform_remote_state.appgw.outputs.internal_appgw_ip
+    shipping  = data.terraform_remote_state.appgw.outputs.internal_appgw_ip
+    payment   = data.terraform_remote_state.appgw.outputs.internal_appgw_ip
+    dispatch  = data.terraform_remote_state.appgw.outputs.internal_appgw_ip
   }
 }
