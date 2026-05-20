@@ -1,11 +1,15 @@
-output "appgw_id" {
-  value = module.appgw.appgw_id
+output "public_appgw_backend_pool_id" {
+  value = module.public_appgw.backend_pool_id
 }
 
-output "public_ip" {
-  value = module.appgw.public_ip
+output "public_appgw_ip" {
+  value = module.public_appgw.frontend_ip
 }
 
-output "backend_pool_id" {
-  value = module.appgw.backend_pool_id
+output "internal_appgw_backend_pool_id" {
+  value = module.internal_appgw.backend_pool_id
+}
+
+output "internal_appgw_ip" {
+  value = module.internal_appgw.frontend_ip
 }
