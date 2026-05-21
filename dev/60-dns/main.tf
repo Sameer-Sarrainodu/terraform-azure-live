@@ -10,16 +10,19 @@ module "private_dns" {
 
   records = {
 
-    mongodb  = "10.0.3.4"
-    mysql    = "10.0.3.5"
-    redis    = "10.0.2.4"
-    rabbitmq = "10.0.2.5"
+mongodb  = data.terraform_remote_state.data.outputs.private_ips["mongodb"]
 
-    catalogue = data.terraform_remote_state.appgw.outputs.internal_appgw_ip
-    user      = data.terraform_remote_state.appgw.outputs.internal_appgw_ip
-    cart      = data.terraform_remote_state.appgw.outputs.internal_appgw_ip
-    shipping  = data.terraform_remote_state.appgw.outputs.internal_appgw_ip
-    payment   = data.terraform_remote_state.appgw.outputs.internal_appgw_ip
-    dispatch  = data.terraform_remote_state.appgw.outputs.internal_appgw_ip
+mysql    = data.terraform_remote_state.data.outputs.private_ips["mysql"]
+
+redis    = data.terraform_remote_state.data.outputs.private_ips["redis"]
+
+rabbitmq = data.terraform_remote_state.data.outputs.private_ips["rabbitmq"]
+
+catalogue = data.terraform_remote_state.appgw.outputs.public_appgw_ip
+user      = data.terraform_remote_state.appgw.outputs.public_appgw_ip
+cart      = data.terraform_remote_state.appgw.outputs.public_appgw_ip
+shipping  = data.terraform_remote_state.appgw.outputs.public_appgw_ip
+payment   = data.terraform_remote_state.appgw.outputs.public_appgw_ip
+dispatch  = data.terraform_remote_state.appgw.outputs.public_appgw_ip
   }
 }
