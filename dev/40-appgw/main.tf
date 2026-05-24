@@ -12,6 +12,10 @@ module "public_appgw" {
 
   is_public = true
 
+  ssl_certificate_path = "${path.module}/roboshop.pfx"
+
+  ssl_certificate_password = "Roboshop@123"
+
   tags = {
     Environment = "dev"
     Project     = "roboshop"

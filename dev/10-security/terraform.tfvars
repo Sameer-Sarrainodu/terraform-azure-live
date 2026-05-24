@@ -1,38 +1,59 @@
 app_nsg_rules = [
 
   {
-    name                       = "allow-http"
+    name                       = "allow-appgw-http"
     priority                   = 100
     direction                  = "Inbound"
     access                     = "Allow"
     protocol                   = "Tcp"
-    source_address_prefix      = "*"
+    source_address_prefix      = "10.0.5.0/24"
     destination_address_prefix = "*"
     destination_port_range     = "80"
   },
 
   {
+    name                       = "allow-appgw-apps"
+    priority                   = 110
+    direction                  = "Inbound"
+    access                     = "Allow"
+    protocol                   = "Tcp"
+    source_address_prefix      = "10.0.5.0/24"
+    destination_address_prefix = "*"
+    destination_port_range     = "8080"
+  },
+
+  {
+    name                       = "allow-azure-lb-http"
+    priority                   = 115
+    direction                  = "Inbound"
+    access                     = "Allow"
+    protocol                   = "Tcp"
+    source_address_prefix      = "AzureLoadBalancer"
+    destination_address_prefix = "*"
+    destination_port_range     = "80"
+  },
+
+  {
+    name                       = "allow-azure-lb-apps"
+    priority                   = 116
+    direction                  = "Inbound"
+    access                     = "Allow"
+    protocol                   = "Tcp"
+    source_address_prefix      = "AzureLoadBalancer"
+    destination_address_prefix = "*"
+    destination_port_range     = "8080"
+  },
+
+  {
     name                       = "allow-ssh"
-    priority                   = 105
+    priority                   = 120
     direction                  = "Inbound"
     access                     = "Allow"
     protocol                   = "Tcp"
     source_address_prefix      = "*"
     destination_address_prefix = "*"
     destination_port_range     = "22"
-  },
-
-  {
-    name                       = "allow-jenkins"
-    priority                   = 110
-    direction                  = "Inbound"
-    access                     = "Allow"
-    protocol                   = "Tcp"
-    source_address_prefix      = "*"
-    destination_address_prefix = "*"
-    destination_port_range     = "8080"
   }
-
 ]
 
 middleware_nsg_rules = [
