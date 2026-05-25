@@ -129,3 +129,39 @@ db_nsg_rules = [
   }
 
 ]
+
+appgw_nsg_rules = [
+
+  {
+    name                       = "allow-http"
+    priority                   = 100
+    direction                  = "Inbound"
+    access                     = "Allow"
+    protocol                   = "Tcp"
+    source_address_prefix      = "*"
+    destination_address_prefix = "*"
+    destination_port_range     = "80"
+  },
+
+  {
+    name                       = "allow-https"
+    priority                   = 110
+    direction                  = "Inbound"
+    access                     = "Allow"
+    protocol                   = "Tcp"
+    source_address_prefix      = "*"
+    destination_address_prefix = "*"
+    destination_port_range     = "443"
+  },
+
+  {
+    name                       = "allow-gatewaymanager"
+    priority                   = 120
+    direction                  = "Inbound"
+    access                     = "Allow"
+    protocol                   = "Tcp"
+    source_address_prefix      = "GatewayManager"
+    destination_address_prefix = "*"
+    destination_port_range     = "65200-65535"
+  }
+]

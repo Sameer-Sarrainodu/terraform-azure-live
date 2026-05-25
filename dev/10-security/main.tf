@@ -27,6 +27,19 @@ module "db_nsg" {
   rules               = var.db_nsg_rules
 }
 
+module "appgw_nsg" {
+
+  source = "../../../terraform-azure-module/nsg"
+
+  nsg_name            = "nsg-appgw-dev"
+
+  location            = data.terraform_remote_state.network.outputs.location
+
+  resource_group_name = data.terraform_remote_state.network.outputs.rg_name
+
+  rules               = var.appgw_nsg_rules
+}
+
 module "subnet_nsg_assoc" {
   source = "../../../terraform-azure-module/subnet-nsg-association"
 
@@ -44,6 +57,11 @@ module "subnet_nsg_assoc" {
     db = {
       subnet_id = data.terraform_remote_state.network.outputs.subnet_ids["db"]
       nsg_id    = module.db_nsg.nsg_id
+    }
+
+    appgw = {
+      subnet_id = data.terraform_remote_state.network.outputs.subnet_ids["appgw"]
+      nsg_id    = module.appgw_nsg.nsg_id
     }
   }
 }
